@@ -1,0 +1,11 @@
+# IDEA specific files
+.idea
+
+# Secret settings
+config/localSettings.js
+
+# Imported modules
+node_modules
+
+# NPM generated files
+npm-debug.log

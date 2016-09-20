@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md-4">
+    <h2>SHL-tabellen</h2>
+    <table>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>+/-</th>
+        <th>GP</th>
+        <th>P</th>
+      </tr>
+      {{#each teams}}
+        <tr>
+          <td>{{this.rank}}</td>
+          <td>{{this.team_code}}</td>
+          <td>{{this.diff}}</td>
+          <td>{{this.gp}}</td>
+          <td>{{this.points}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+  <div class="col-md-4">
+    <h2>Dagens matcher</h2>
+    <table>
+      <tr>
+        <th>Hemma</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Borta</th>
+        <th>Arena</th>
+      </tr>
+      {{#each games}}
+        <tr>
+          <td>{{this.home_team_code}}</td>
+          <td>{{this.home_team_result}}</td>
+          <td>vs.</td>
+          <td>{{this.away_team_result}}</td>
+          <td>{{this.away_team_code}}</td>
+          <td>{{this.venue}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>
+

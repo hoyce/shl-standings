@@ -1,0 +1,10 @@
+/**
+ * Configuration file for application secrets.
+ */
+
+module.exports = {
+  client: {
+    id: '',
+    secret: ''
+  }
+}
