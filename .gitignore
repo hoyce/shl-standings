@@ -9,3 +9,9 @@ node_modules
 
 # NPM generated files
 npm-debug.log
+
+# Gulp generated files
+/public/css/bootstrap
+/public/css/fonts
+/public/js/bootstrap
+/public/js/jquery
