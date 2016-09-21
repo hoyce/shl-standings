@@ -5,24 +5,18 @@ const app = express()
 const config = require('./config/config')
 const routes = require('./server/routes/routes')
 const accessLogging = require('./server/logging/accessLogging')
-// const handlebars = require("./server/templating/handlebarsInit")
-// app.use(handlebars.initHandlebars)
+const Handlebars = require('handlebars')
+const hbs = require('./server/templating/handlebarsInit')
 
-const exphbs = require('express-handlebars')
-const path = require('path')
+hbs.initHandlebars(app)
 
-app.set('views', path.join(__dirname, '/views'))
-app.set('layouts', path.join(__dirname, '/views/layouts'))
-app.set('partials', path.join(__dirname, '/views/partials'))
-app.engine('handlebars', exphbs({
-  defaultLayout: 'publicLayout',
-  layoutsDir: app.settings.layouts,
-  partialsDir: app.settings.partials
-}))
-app.set('view engine', 'handlebars')
 app.use('/static', express.static('./public'))
-app.set('case sensitive routing', true)
 
+Handlebars.registerHelper('inc', function(value, options) {
+  return parseInt(value) + 1
+})
+
+app.set('case sensitive routing', true)
 app.use(accessLogging)
 app.use(routes)
 

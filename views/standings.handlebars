@@ -1,3 +1,6 @@
+<script src="/static/js/handlebars.min.js" type="text/javascript"></script>
+<script src="/static/js/standingsModule.js" type="text/javascript"></script>
+
 <div class="row">
   <div class="col-md-4">
     <h2>SHL-tabellen</h2>
@@ -11,7 +14,7 @@
       </tr>
       {{#each teams}}
         <tr>
-          <td>{{this.rank}}</td>
+          <td>{{inc @index}}</td>
           <td>{{this.team_code}}</td>
           <td>{{this.diff}}</td>
           <td>{{this.gp}}</td>
