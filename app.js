@@ -7,15 +7,16 @@ const routes = require('./server/routes/routes')
 const accessLogging = require('./server/logging/accessLogging')
 const Handlebars = require('handlebars')
 const hbs = require('./server/templating/handlebarsInit')
+const sass = require('./server/sass/sass')
 
+sass.sassMiddleware(app)
 hbs.initHandlebars(app)
 
-app.use('/static', express.static('./public'))
-
-Handlebars.registerHelper('inc', function(value, options) {
+Handlebars.registerHelper('inc', function (value, options) {
   return parseInt(value) + 1
 })
 
+app.use('/static', express.static('./public'))
 app.set('case sensitive routing', true)
 app.use(accessLogging)
 app.use(routes)

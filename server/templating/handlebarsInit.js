@@ -3,7 +3,7 @@
 const exphbs = require('express-handlebars')
 const path = require('path')
 
-let initHandlebars = function(app) {
+let initHandlebars = function (app) {
   app.set('views', path.join(__dirname, '/../../views'))
   app.set('layouts', path.join(__dirname, '/../../views/layouts'))
   app.set('partials', path.join(__dirname, '/../../views/partials'))

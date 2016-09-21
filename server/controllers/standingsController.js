@@ -13,7 +13,6 @@ module.exports = {
 }
 
 function _getTable (req, res) {
-  console.log(currentDate)
   client.season(year).statistics.teams.standings()
     .then(teams => {
       client.season(year).games()
