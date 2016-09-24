@@ -17,18 +17,24 @@ function _getTable (req, res) {
     .then(teams => {
       client.season(year).games()
         .then(games => {
-          let todayGames = []
-          games.games.forEach(function (game, index) {
-            if (game['start_date_time'].indexOf(currentDate) > -1) {
-              todayGames.push(game)
-            }
-          })
-          // console.log('Games: ' + JSON.stringify(todayGames))
-          // console.log('Teams: ' + JSON.stringify(teams))
-          res.render('standings', {
-            teams: teams,
-            games: todayGames
-          })
+          client.articles([])
+            .then(articles => {
+              let todayGames = []
+              games.games.forEach(function (game, index) {
+                if (game['start_date_time'].indexOf(currentDate) > -1) {
+                  todayGames.push(game)
+                }
+              })
+              // console.log('Games: ' + JSON.stringify(todayGames))
+              // console.log('Teams: ' + JSON.stringify(teams))
+              console.log('articles: ' + JSON.stringify(articles))
+
+              res.render('standings', {
+                teams: teams,
+                games: todayGames,
+                articles: articles
+              })
+            })
         })
     })
 }

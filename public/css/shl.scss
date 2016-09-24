@@ -1,3 +1,38 @@
-body {
-  background-color: red;
+table {
+  &.standings {
+    tr {
+      &:nth-child(8), &:nth-child(12), &:nth-child(14) {
+        border-top: 2px solid #111;
+      }
+      &:last-child {
+        border-bottom: 1px solid lightgray;
+      }
+      td {
+        &.position {
+        }
+        &.team {
+        }
+        &.logo {
+          text-align: center;
+        }
+
+        .glyphicon.glyphicon-heart-empty {
+          color: #F9141E;
+          vertical-align: middle;
+          margin: 0 0 4px 2px;
+        }
+      }
+    }
+  }
+  &.games {
+    &:last-child {
+      border-bottom: 1px solid lightgray;
+    }
+  }
+}
+
+.source {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
 }

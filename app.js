@@ -16,6 +16,10 @@ Handlebars.registerHelper('inc', function (value, options) {
   return parseInt(value) + 1
 })
 
+Handlebars.registerHelper('isBif', function (value, options) {
+  return value === 'BIF'
+})
+
 app.use('/static', express.static('./public'))
 app.set('case sensitive routing', true)
 app.use(accessLogging)
